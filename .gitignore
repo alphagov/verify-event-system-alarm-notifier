@@ -1,0 +1,7 @@
+.idea
+*.pyc
+env
+venv
+package-env
+tmp
+verify-event-system-alarm-notifier.zip
