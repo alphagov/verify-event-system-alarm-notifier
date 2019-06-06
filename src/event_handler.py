@@ -8,9 +8,9 @@ from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 
 
-# The base-64 encoded, encrypted key (CiphertextBlob) stored in the kmsEncryptedHookUrl environment variable
-ENCRYPTED_HOOK_URL = os.environ['kmsEncryptedHookUrl']
-SLACK_CHANNEL = os.environ['slackChannel']
+# The base-64 encoded, encrypted key (CiphertextBlob) stored in the ENCRYPTED_SLACK_WEBHOOK_URL environment variable
+ENCRYPTED_HOOK_URL = os.environ['ENCRYPTED_SLACK_WEBHOOK_URL']
+SLACK_CHANNEL = os.environ['SLACK_CHANNEL']
 
 HOOK_URL = "https://" + boto3.client('kms').decrypt(CiphertextBlob=b64decode(ENCRYPTED_HOOK_URL))['Plaintext'].decode('utf-8')
 
