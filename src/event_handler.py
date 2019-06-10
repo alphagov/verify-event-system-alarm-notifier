@@ -26,11 +26,9 @@ def build_slack_message(message):
     new_state = message['NewStateValue']
     reason = message['NewStateReason']
 
-    slack_message = f"CloudWatch Alarm state changed for `{alarm_name}`"
-    slack_message += f" from `{old_state}` to `{new_state}`"
-    slack_message += f" because of the following reason:\n```{reason}```"
-
-    return slack_message
+    return f"CloudWatch Alarm state changed for `{alarm_name}`" \
+        f" from `{old_state}` to `{new_state}`" \
+        f" because of the following reason:\n```{reason}```"
 
 
 def notify_slack(event, context):
