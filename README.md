@@ -1,5 +1,9 @@
 # verify-event-system-alarm-notifier
 
+>**GOV.UK Verify has closed**
+>
+>This repository is out of date and has been archived
+
 Lambda function for notifying in Slack when CloudWatch alarms are triggered in the Event System.
 
 ## Release
